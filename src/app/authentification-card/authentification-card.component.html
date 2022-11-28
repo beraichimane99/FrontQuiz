@@ -1,7 +1,7 @@
 <mat-card class="quiz-card">
     <img src="../../assets/img/utilisateur.png" class="user" >
     <div class="spacer"></div>
-    <form class="example-form"  #authform="ngForm" (ngSubmit)="authform">
+    <form class="example-form" [formGroup]="profileForm"  >
        <!-- <mat-form-field class="example-full-width">
           <mat-label>User name</mat-label>
           <input matInput placeholder="User123" value="">
@@ -10,7 +10,7 @@
         <mat-form-field class="example-full-width">
             <mat-label>Email</mat-label>
             <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
-                   placeholder="Ex. user@uhp.ac.ma" required ngModel name="email">
+                   placeholder="Ex. user@uhp.ac.ma" required  name="email">
             <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
               Please enter a valid email address
             </mat-error>
@@ -20,7 +20,7 @@
           </mat-form-field>
           <div class="spacer"></div>
           <mat-form-field class="example-full-width">
-          <input matInput type="password" placeholder="Password" formControlName="password" required ngModel name="email">
+          <input matInput type="password" placeholder="Password" [formControl]="password" required  name="email">
            </mat-form-field>
       </form>
       <div class="spacer"></div>
