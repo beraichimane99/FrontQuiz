@@ -1,0 +1,24 @@
+.quiz-card{
+    margin-top: 5em;
+    margin-left: 30em;
+   /* margin-right: 20em;*/
+    max-width: 35em;
+}
+.user{
+    margin-top: 1em;
+    margin-left: 13em;
+}
+.spacer{
+    height: 1.5em;
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+.example-full-width {
+    width: 100%;
+}
+.but{
+    margin-left: 13em;
+}

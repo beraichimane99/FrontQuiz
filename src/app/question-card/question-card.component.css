@@ -1,0 +1,12 @@
+.quiz-card{
+    max-width: 85em;
+    margin-left: 5em;
+    margin-right: 5em;
+    
+}
+.spacer{
+    height: 1.5em;
+}
+.cursor{
+    cursor: pointer;
+}

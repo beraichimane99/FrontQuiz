@@ -1,0 +1,22 @@
+.quiz-card{
+    max-width: 85em;
+    margin-left: 5em;
+    margin-right: 5em;
+    
+}
+.h1text{
+    margin-left: 19em;
+    font-weight: bold !important;
+    color : #3f51b5 ;
+}
+.h2text{
+    margin-left: 23.5em;
+    font-weight: bold !important;
+    color : #3f51b5 ;
+}
+.spacer{
+    height: 2em;
+}
+.imgd{
+    margin-left: 36em;
+}
