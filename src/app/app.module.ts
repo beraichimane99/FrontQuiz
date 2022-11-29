@@ -15,7 +15,7 @@ import { ScoreCardComponent } from './score-card/score-card.component';
 import { AuthentificationCardComponent } from './authentification-card/authentification-card.component';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-@NgModule({
+import { HttpClientModule } from '@angular/common/http';@NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
@@ -34,7 +34,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatProgressBarModule,
     MatInputModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

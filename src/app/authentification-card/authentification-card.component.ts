@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 import { FormGroup} from '@angular/forms';
+import {User} from './../models/User' ;
+import { AuthServiceService } from '../services/auth-service.service';
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const isSubmitted = form && form.submitted;
@@ -17,16 +19,24 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class AuthentificationCardComponent implements OnInit {
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl('') ;
+  name = new FormControl();
+ // email = new FormControl('') ;
   matcher = new MyErrorStateMatcher();
   profileForm = new FormGroup({
     emailFormControl: new FormControl(''),
   });
-  constructor() { }
+  newUser : User ={
+    name :'' ,
+    email :'' , 
+    password: ''
+  }
+  constructor(private adduserService : AuthServiceService) { }
 
   ngOnInit(): void {
   }
-  
-  onFormSubmit(authForm : NgForm) {
-    console.log(authForm);
+  addUser(): void {
+    this.adduserService.addUserf(this.newUser);
+    console.log(this.newUser);
+  }
 
-}}
+}

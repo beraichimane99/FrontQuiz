@@ -2,14 +2,14 @@
     <img src="../../assets/img/utilisateur.png" class="user" >
     <div class="spacer"></div>
     <form class="example-form" [formGroup]="profileForm"  >
-       <!-- <mat-form-field class="example-full-width">
+        <mat-form-field class="example-full-width">
           <mat-label>User name</mat-label>
-          <input matInput placeholder="User123" value="">
-        </mat-form-field>-->
+          <input matInput placeholder="User123" [formControl]="name" [(ngModel)]="newUser.name">
+        </mat-form-field>
         <div class="spacer"></div>
         <mat-form-field class="example-full-width">
             <mat-label>Email</mat-label>
-            <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+            <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher" [(ngModel)]="newUser.email"
                    placeholder="Ex. user@uhp.ac.ma" required  name="email">
             <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
               Please enter a valid email address
@@ -20,9 +20,9 @@
           </mat-form-field>
           <div class="spacer"></div>
           <mat-form-field class="example-full-width">
-          <input matInput type="password" placeholder="Password" [formControl]="password" required  name="email">
+          <input matInput type="password" placeholder="Password" [formControl]="password" [(ngModel)]="newUser.password" required  name="email">
            </mat-form-field>
       </form>
       <div class="spacer"></div>
-      <button mat-raised-button class="but" color="primary">Se connecter</button>
+      <button mat-raised-button class="but" color="primary" (click)="addUser()">Se connecter</button>
 </mat-card>
