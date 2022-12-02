@@ -22,3 +22,9 @@
 .but{
     margin-left: 13em;
 }
+.clickable{
+    margin-top: 1em;
+    cursor: pointer;
+    color: blue;
+    margin-right: 1em ;
+}

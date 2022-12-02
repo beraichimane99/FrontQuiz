@@ -17,6 +17,8 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 
 export class AuthentificationCardComponent implements OnInit {
+  auth : boolean = false;
+  output : String = 'Si vous n\'avez pas de compte S\'inscrire';
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl('') ;
   name = new FormControl();
@@ -37,6 +39,16 @@ export class AuthentificationCardComponent implements OnInit {
   addUser(): void {
     this.adduserService.addUserf(this.newUser);
     console.log(this.newUser);
+  }
+  loginUser(): void {
+    this.adduserService.authentification(this.newUser);
+    console.log("Loooooggeeeed");
+  }
+  changeAuth(){
+    this.auth = ! this.auth;
+    if(this.auth === true){
+      this.output="Si vous avez déja un compte S\'authentifier";
+    }
   }
 
 }

@@ -2,7 +2,7 @@
     <img src="../../assets/img/utilisateur.png" class="user" >
     <div class="spacer"></div>
     <form class="example-form" [formGroup]="profileForm"  >
-        <mat-form-field class="example-full-width">
+        <mat-form-field class="example-full-width" *ngIf="auth==true">
           <mat-label>User name</mat-label>
           <input matInput placeholder="User123" [formControl]="name" [(ngModel)]="newUser.name">
         </mat-form-field>
@@ -24,5 +24,7 @@
            </mat-form-field>
       </form>
       <div class="spacer"></div>
-      <button mat-raised-button class="but" color="primary" (click)="addUser()">Se connecter</button>
+      <button mat-raised-button class="but" color="primary" *ngIf="auth==false" (click)="loginUser()">S'identifier</button>
+      <button mat-raised-button class="but" color="primary" (click)="addUser()" *ngIf="auth==true">S'inscrire</button>
+      <p (click)="changeAuth()" class="clickable">{{output}}</p>
 </mat-card>

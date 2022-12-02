@@ -10,16 +10,26 @@ import { LocalStorageServiceService } from './local-storage-service.service';
 })
 
 export class AuthServiceService {
-  authUrl = 'http://192.168.195.70:5555/api/users/signup';
+  addUrl = 'http://192.168.0.104:5555/api/users/signup';
+  authUrl = 'http://192.168.0.104:5555/api/users/login';
+
   constructor(private http: HttpClient,private localStorage : LocalStorageServiceService ) { 
     
   }
+  /** Add user in database with 
+   * name , email , password
+   */
   addUserf(user: User) {
+    return this.http.post<any>(this.addUrl,user).subscribe((res) => {
+      localStorage.setItem(res.id,res.token);
+     // console.log(localStorage);
+  })}
+
+  authentification(user: User){
     return this.http.post<any>(this.authUrl,user).subscribe((res) => {
       localStorage.setItem(res.id,res.token);
-      console.log(localStorage);
-
+     // console.log(localStorage);
   })
-    console.log(user.name);
   }
+
 }
