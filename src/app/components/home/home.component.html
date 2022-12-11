@@ -1,0 +1,27 @@
+<div *ngIf="router ==='/'">
+    <app-navbar></app-navbar>
+    <mat-tab-group animationDuration="0ms" backgroundColor = primary >
+        <mat-tab label="Quiz">
+            <app-question-card></app-question-card>
+        </mat-tab>
+        <mat-tab label="classement">
+            <app-classement></app-classement>
+        </mat-tab>
+      </mat-tab-group>
+  <!--
+    <nav>
+        <a routerLink="/quiz" routerLinkActive="active" target="_self" rel="bookmark">
+            <mat-card class="quiz-card" (click)="changeRoute('/quiz')">
+                <mat-card-header>
+                    <mat-card-title>Passer un quiz </mat-card-title>
+                </mat-card-header>
+            </mat-card>
+        </a>
+        <div class="spacer"></div>
+        <mat-card class="quiz-card">
+            <mat-card-header>
+                <mat-card-title>Voir le classement </mat-card-title>
+            </mat-card-header>
+        </mat-card>
+    </nav>-->  
+</div>

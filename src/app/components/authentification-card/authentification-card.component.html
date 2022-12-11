@@ -1,4 +1,4 @@
-<mat-card class="quiz-card">
+<mat-card class="quiz-card" *ngIf="unauthenticated==false">
     <img src="../../assets/img/utilisateur.png" class="user" >
     <div class="spacer"></div>
     <form class="example-form" [formGroup]="profileForm"  >
@@ -26,5 +26,8 @@
       <div class="spacer"></div>
       <button mat-raised-button class="but" color="primary" *ngIf="auth==false" (click)="loginUser()">S'identifier</button>
       <button mat-raised-button class="but" color="primary" (click)="addUser()" *ngIf="auth==true">S'inscrire</button>
-      <p (click)="changeAuth()" class="clickable">{{output}}</p>
+      <p (click)="changeAuth()" class="clickable">{{output}}</p> 
 </mat-card>
+<div *ngIf="unauthenticated==true">
+<app-home></app-home>
+</div>

@@ -2,17 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { User } from '../models/User';
-import { LocalStorageServiceService } from './local-storage-service.service';
+import { User } from '../../models/User';
+import { LocalStorageServiceService } from '../localStorageService/local-storage-service.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthServiceService {
-  addUrl = 'http://192.168.0.104:5555/api/users/signup';
-  authUrl = 'http://192.168.0.104:5555/api/users/login';
-
+  authUrl = 'http://192.168.3.97:5555/api/users/';
   constructor(private http: HttpClient,private localStorage : LocalStorageServiceService ) { 
     
   }
@@ -20,16 +19,17 @@ export class AuthServiceService {
    * name , email , password
    */
   addUserf(user: User) {
-    return this.http.post<any>(this.addUrl,user).subscribe((res) => {
+    return this.http.post<any>(this.authUrl+"signup",user).subscribe((res) => {
       localStorage.setItem(res.id,res.token);
      // console.log(localStorage);
   })}
 
   authentification(user: User){
-    return this.http.post<any>(this.authUrl,user).subscribe((res) => {
+    return this.http.post<any>(this.authUrl+"login",user)/*.subscribe((res) => {
       localStorage.setItem(res.id,res.token);
-     // console.log(localStorage);
-  })
+      if (res) this.router.navigate(['/home']);
+     console.log(res);
+  })*/
   }
 
 }

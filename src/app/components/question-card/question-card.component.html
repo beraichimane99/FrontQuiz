@@ -1,0 +1,39 @@
+<div class="spacer"></div>
+<ng-container *ngIf="!isQuizCompleted">
+<mat-card class="quiz-card" >
+<mat-card-header >
+    <mat-card-title>{{questionList[currentQuestion].question}}</mat-card-title>
+</mat-card-header>
+  <div class="spacer"></div>
+  <mat-card-actions>
+    <div *ngFor="let rep of questionList[currentQuestion]?.answers | keyvalue ">
+    <mat-card class="cursor" (click)="answer(currentQuestion+1,rep.value)"  appAppchangebg [isCorrect]=rep.value > 
+       <p>{{rep.key}}</p>
+    </mat-card>
+    <div class="spacer"></div>
+    </div>
+</mat-card-actions>
+<div class="justify-content-between">
+<button mat-raised-button color="primary" class="btn1" [disabled]="currentQuestion===0" (click)="previousQuestion()">
+  <mat-icon>keyboard_arrow_left</mat-icon>
+</button>
+<button mat-raised-button color="primary" class="btn2" (click)="nextQuestion()" >
+  <mat-icon>keyboard_arrow_right</mat-icon>
+</button>
+</div>
+</mat-card>
+</ng-container>
+
+<ng-container *ngIf="isQuizCompleted">
+  <mat-card class="quiz-card">
+    <img src="../../assets/img/quiz1.png" class="imgd">
+    <mat-card-header>
+       <div class="spacer"></div> 
+      <h1 class="h1text">Votre Score est : </h1>  
+      </mat-card-header>
+     
+      <mat-card-actions>
+        <h1 class="h2text">{{points}} / {{lnt}}</h1> 
+      </mat-card-actions>
+    </mat-card>
+</ng-container>

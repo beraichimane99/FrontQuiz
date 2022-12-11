@@ -4,24 +4,37 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
-import { QuestionCardComponent } from './question-card/question-card.component';
+import { QuestionCardComponent } from './components/question-card/question-card.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-import { ScoreCardComponent } from './score-card/score-card.component';
-import { AuthentificationCardComponent } from './authentification-card/authentification-card.component';
+import { ScoreCardComponent } from './components/score-card/score-card.component';
+import { AuthentificationCardComponent } from './components/authentification-card/authentification-card.component';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';@NgModule({
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
+import { BaseComponent } from './components/base/base.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { ClassementComponent } from './components/classement/classement.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { AppchangebgDirective } from './appchangebg.directive';
+@NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     QuestionCardComponent,
     ScoreCardComponent,
-    AuthentificationCardComponent
+    AuthentificationCardComponent,
+    HomeComponent,
+    BaseComponent,
+    ClassementComponent,
+    AppchangebgDirective
   ],
   imports: [
     BrowserModule,
@@ -36,7 +49,10 @@ import { HttpClientModule } from '@angular/common/http';@NgModule({
     FormsModule, 
     ReactiveFormsModule,
     HttpClientModule,
-    
+    MatTabsModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
