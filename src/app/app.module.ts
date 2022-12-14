@@ -11,15 +11,11 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { QuestionCardComponent } from './components/question-card/question-card.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-import { ScoreCardComponent } from './components/score-card/score-card.component';
 import { AuthentificationCardComponent } from './components/authentification-card/authentification-card.component';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { HomeComponent } from './components/home/home.component';
-import { BaseComponent } from './components/base/base.component';
 import {MatTabsModule} from '@angular/material/tabs';
-import { ClassementComponent } from './components/classement/classement.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
@@ -29,11 +25,7 @@ import { AppchangebgDirective } from './appchangebg.directive';
     AppComponent,
     NavbarComponent,
     QuestionCardComponent,
-    ScoreCardComponent,
     AuthentificationCardComponent,
-    HomeComponent,
-    BaseComponent,
-    ClassementComponent,
     AppchangebgDirective
   ],
   imports: [

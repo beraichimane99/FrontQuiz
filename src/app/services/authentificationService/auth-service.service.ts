@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class AuthServiceService {
-  authUrl = 'http://192.168.3.101:5555/api/users/';
+  authUrl = 'http://192.168.123.70:5555/api/users/';
   constructor(
     private http: HttpClient,
     private localStorage: LocalStorageServiceService

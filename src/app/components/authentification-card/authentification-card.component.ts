@@ -70,7 +70,6 @@ export class AuthentificationCardComponent implements OnInit {
       localStorage.setItem(res.id, res.token);
       this.unauthenticated = true;
       this.router.navigateByUrl('/');
-      //S console.log(res);
     });
   }
   changeAuth() {
